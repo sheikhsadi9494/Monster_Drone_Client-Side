@@ -1,0 +1,65 @@
+[
+    {
+        "img": "https://149355317.v2.pressablecdn.com/wp-content/uploads/2019/10/Force1-U49WF-Drone-Top-Camera-Drones.jpg",
+        "price": "1500",
+        "productName": "U49WF FPV Camera ",
+        "discription": "The U49WF FPV Camera Drone boasts altitude-hold and a first-person-view (FPV) screen with Camera Live Video, so you can see exactly what the HD camera of your drone sees in real-time.It also comes with an extra battery to help you fly for even longer before having to charge, and outstanding 720p camera for HD video and images."
+
+    },
+    {
+        "img": "https://149355317.v2.pressablecdn.com/wp-content/uploads/2021/03/Holy-Stone-HS270-Top-Camera-Drones.jpg",
+        "price": "900",
+        "productName": "Holy Stone HS270 ",
+        "discription": "The Holy Stone 2.7K GPS drone proves that you do not have to drop hundreds of dollars for a great starter drone. The 2.7k camera system features 5G image transmission, ensuring crisp pictures every time. The included follow-me, tap fly, and point of interest modes allow you to capture cinematic footage or even capture."
+
+    },
+    {
+        "img": "https://149355317.v2.pressablecdn.com/wp-content/uploads/2020/05/DJI-Mavic-Air-2-Top-Camera-Drones.jpg",
+        "price": "800",
+        "productName": "DJI Mavic Air 2",
+        "discription": "DJI has done it again — the drone manufacturing juggernaut just released the Mavic Air 2, it is the first consumer drone to be equipped with AirSense. Which is essentially ADS-B In tech that enables the drone to pick up on nearby aircraft. DJI has done an incredible job packing this new drone with a large array of features."
+
+    },
+    {
+        "img": "https://149355317.v2.pressablecdn.com/wp-content/uploads/2020/04/TEST-Skydio-2-Top-Camera-Drones-2.jpg",
+        "price": "1800",
+        "productName": "Skydio 2 +",
+        "discription": "Looking for Hollywood-style shots without complex equipment and high operating costs? Well, then the Skydio 2 +  is a drone that you should seriously consider. With an advanced 45-megapixel obstacle avoidance camera system, it’s designed to take the heavy workload off the pilot. flight modes allow it to zip through."
+
+    },
+    {
+        "img": "https://149355317.v2.pressablecdn.com/wp-content/uploads/2021/03/DJI-FPV-Drone-Top-Camera-Drones.jpg",
+        "price": "1900",
+        "productName": "DJI FPV Drone",
+        "discription": "The DJI FPV drone has created an entry point for FPV flying. It has also shaken up the more traditional offerings from DJI by allowing those who have never flown FPV before to dive right in without needing to build a custom drone or learn specialized piloting skills. Its hybrid design makes it great for both cinematic FPV flying."
+
+    },
+    {
+        "img": "https://149355317.v2.pressablecdn.com/wp-content/uploads/2020/06/Autel-EVO-2-8K-Drone-Top-Camera-Drones.jpg",
+        "price": "2100",
+        "productName": "Autel Evo II ",
+        "discription": "With a price point starting just under $2100, the newly released Autel Evo II Series  is a serious contender in the increasingly competitive foldable drone segment. The Autel Evo II Drones pack some serious hardware under their bright orange shells. With 40-minutes of flight time, it has the longest flight time and battery lenght of any drone."
+
+    },
+    {
+        "img": "https://149355317.v2.pressablecdn.com/wp-content/uploads/2021/12/DJI-Mavic-3-Top-Camera-Drones.jpg",
+        "price": "4000",
+        "productName": "DJI Mavic 3",
+        "discription": "The DJI Mavic 3 is a lightweight, highly portable prosumer drone that comes with two high-quality cameras. Compared to its predecessor, almost every aspect of it has been upgraded from the Mavic 2 Pro. The dual-camera system features a Hasselblad 4/3” sensor and a ½” Tele camera sensor that has 28x zoom and many more."
+
+    },
+    {
+        "img": "https://149355317.v2.pressablecdn.com/wp-content/uploads/2020/04/Phantom-4-Pro-V2.0-Top-Camera-Drones.jpg",
+        "price": "3400",
+        "productName": "DJI Phantom 4 ",
+        "discription": "The DJI Phantom series drones are some of the most capable and recognizable drones on the market. The Phantom 1 was a revolutionary aircraft that put DJI and prosumer drones on the map. The Phantom 4 Pro V2.0 has collectively built on the series success and continues to be used for photography, filmmaking, inspections."
+
+    },
+    {
+        "img": "https://aerocorner.com/wp-content/uploads/2020/02/DJI-phantom-4-GPS-Drone-960x640.jpg",
+        "price": "3200",
+        "productName": "DJI phantom 4 GPS Drone",
+        "discription": "let’s conclude by looking at a few specialty types, starting with drones that are specifically designed with GPS in mind. These drones work by linking up to satellites via a GPS hookup. They are then able to use this as a means of mapping out the rest of their flight, creating data that you can then extract and use for your own purposes. "
+
+    }
+]
