@@ -1,6 +1,7 @@
 import { Button, Card, CardContent, CardMedia, Typography } from "@mui/material";
 import React, { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
+import PlaceOrderModal from "../PlaceOrderModal/PlaceOrderModal";
 import Navbar from "../Shered/Navbar/Navbar";
 
 const PlaceOrder = () => {
@@ -13,6 +14,11 @@ const PlaceOrder = () => {
       .then((res) => res.json())
       .then((data) => setPorduct(data));
   }, []);
+
+  const [openModal, setOpenModal] = React.useState(false);
+  const handleOpenModal = () => setOpenModal(true);
+  const handleCloseModal = () => setOpenModal(false);
+  
   return (
     <div>
         <Navbar></Navbar>
@@ -38,11 +44,20 @@ const PlaceOrder = () => {
           <Button
             sx={{ backgroundColor: "black", mx: 2, mb: 2 }}
             variant="contained"
+            onClick={handleOpenModal}
           >
             Place Order
           </Button>
-
       </Card>
+
+      <PlaceOrderModal
+      handleOpenModal={handleOpenModal}
+      handleCloseModal={handleCloseModal}
+      openModal={openModal}
+      product={product}
+      >
+
+      </PlaceOrderModal>
     </div>
   );
 };
