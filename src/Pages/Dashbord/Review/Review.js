@@ -6,70 +6,77 @@ import { Outlet } from "react-router-dom";
 import useAuth from "../../../hooks/useAuth";
 
 const Review = () => {
+  const { user } = useAuth();
 
-    const {user} = useAuth();
+  const initialInfo = { name: user?.displayName, email: user?.email };
+  const [reviewDetails, setReviewDetails] = React.useState(initialInfo);
 
-    const initialInfo = { name: user?.displayName, email: user?.email };
-    const [reviewDetails, setReviewDetails] = React.useState(initialInfo);
-  
-    const handleBlur = (e) => {
-      e.preventDefault();
-      const field = e.target.name;
-      const value = e.target.value;
-      const newDetails = { ...reviewDetails };
-      newDetails[field] = value;
-      console.log(newDetails);
-      setReviewDetails(newDetails);
+  const handleBlur = (e) => {
+    e.preventDefault();
+    const field = e.target.name;
+    const value = e.target.value;
+    const newDetails = { ...reviewDetails };
+    newDetails[field] = value;
+    console.log(newDetails);
+    setReviewDetails(newDetails);
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const review = {
+      ...reviewDetails,
+      ...initialInfo,
     };
-  
-    const handleSubmit = e => {
-     e.preventDefault();
-     const review = {
-         ...reviewDetails,
-         ...initialInfo
-     }
-    //  post data to the databaes 
-    console.log(review)
-    fetch('http://localhost:5000/reviews', {
-        method: "POST",
-        headers: {
-            'content-type' : 'application/json'
-        },
-        body: JSON.stringify(review)
+    //  post data to the databaes
+    console.log(review);
+    fetch("https://stormy-retreat-92575.herokuapp.com/reviews", {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(review),
     })
-    .then(res => res.json())
-    .then(data => {
-        console.log(data)
-    })
-    }
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+      });
+  };
   return (
     <div>
       <Box>
-        <Typography sx={{textAlign: 'center'}} variant="h3" gutterBottom component="div">
+        <Typography
+          sx={{ textAlign: "center" }}
+          variant="h3"
+          gutterBottom
+          component="div"
+        >
           Review
         </Typography>
-        <form onSubmit={handleSubmit} style={{width: '60%', margin: 'auto'}}>
-        <TextField
-          label="Image url"
-          sx={{width: '100%'}}
-          id="outlined-size-small"
-          name="imageUrl"
-          defaultValue=""
-          onBlur={handleBlur}
-          size="small"
-        /> <br />
-         <TextField
-          id="outlined-multiline-static"
-          label="Your Feedback"
-          sx={{my: 2, width: '100%'}}
-          multiline
-          rows={4}
-          name="feedback"
-          defaultValue=""
-          onBlur={handleBlur}
-        />
-        <Rating sx={{mb: 2}} name="star" onBlur={handleBlur} /> <br />
-        <Button variant="contained" type="submit">Submit</Button>
+        <form onSubmit={handleSubmit} style={{ width: "60%", margin: "auto" }}>
+          <TextField
+            label="Image url"
+            sx={{ width: "100%" }}
+            id="outlined-size-small"
+            name="imageUrl"
+            defaultValue=""
+            onBlur={handleBlur}
+            size="small"
+          />{" "}
+          <br />
+          <TextField
+            id="outlined-multiline-static"
+            label="Your Feedback"
+            sx={{ my: 2, width: "100%" }}
+            multiline
+            rows={4}
+            name="feedback"
+            defaultValue=""
+            onBlur={handleBlur}
+          />
+          <Rating sx={{ mb: 2 }} name="star" onBlur={handleBlur} /> <br />
+          <Button variant="contained" type="submit">
+            Submit
+          </Button>
         </form>
       </Box>
       <Outlet />
@@ -78,7 +85,6 @@ const Review = () => {
 };
 
 export default Review;
-
 
 // if(!img){
 //   return;
@@ -91,7 +97,7 @@ export default Review;
 // formData.append('img', img);
 
 // //  post data to the server
-// fetch('http://localhost:5000/products', {
+// fetch('https://stormy-retreat-92575.herokuapp.com/products', {
 //   method: 'POST',
 //   body: formData
 // })
@@ -106,12 +112,13 @@ export default Review;
 // });
 // };
 
-
-{/* <Input
+{
+  /* <Input
             sx={{ mt: 4, width: "100%" }}
             accept="image/*"
             type="file"
             onChange={e => setImg(e.target.files[0])}
-          /> */}
+          /> */
+}
 
-          // onChange={e => setProductName(e.target.value)}
+// onChange={e => setProductName(e.target.value)}

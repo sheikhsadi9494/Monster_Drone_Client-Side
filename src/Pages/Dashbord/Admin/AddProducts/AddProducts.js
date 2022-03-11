@@ -4,11 +4,10 @@ import { Box } from "@mui/system";
 import React, { useState } from "react";
 
 const AddProducts = () => {
- 
   const [product, setProduct] = useState({});
   const [addSuccessfully, setAddSuccessfully] = useState(false);
 
-  const handleBlur = e => {
+  const handleBlur = (e) => {
     e.preventDefault();
     const field = e.target.name;
     const value = e.target.value;
@@ -17,29 +16,28 @@ const AddProducts = () => {
     setProduct(newDetails);
   };
 
-  const handleOnSubmit = e => {
+  const handleOnSubmit = (e) => {
     e.preventDefault();
-    // collect data 
+    // collect data
     const addProduct = {
       ...product,
-    }
-    // post data to the server 
+    };
+    // post data to the server
     // console.log(addProduct);
-    fetch('http://localhost:5000/products', {
-      method: 'POST',
+    fetch("https://stormy-retreat-92575.herokuapp.com/products", {
+      method: "POST",
       headers: {
-        'content-type' : 'application/json'
+        "content-type": "application/json",
       },
-      body: JSON.stringify(addProduct)
+      body: JSON.stringify(addProduct),
     })
-    .then(res => res.json())
-    .then(data => {
-      if(data.insertedId){
-        setAddSuccessfully(true);
-      }
-    })
-  }
-  
+      .then((res) => res.json())
+      .then((data) => {
+        if (data.insertedId) {
+          setAddSuccessfully(true);
+        }
+      });
+  };
 
   return (
     <div>
@@ -62,7 +60,7 @@ const AddProducts = () => {
             defaultValue=""
             sx={{ width: "100%", mt: 2 }}
             size="small"
-            name='productName'
+            name="productName"
             onBlur={handleBlur}
             variant="standard"
           />

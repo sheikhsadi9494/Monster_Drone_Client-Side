@@ -18,7 +18,7 @@ const PlaceOrder = () => {
   const { img, _id, productName, discription, price } = product;
 
   useEffect(() => {
-    fetch(`http://localhost:5000/products/${productId}`)
+    fetch(`https://stormy-retreat-92575.herokuapp.com/products/${productId}`)
       .then((res) => res.json())
       .then((data) => setPorduct(data));
   }, []);
@@ -31,42 +31,48 @@ const PlaceOrder = () => {
     <div>
       <Navbar></Navbar>
       <Card sx={{ width: "70%", mx: "auto", mt: 10, boxShadow: 0 }}>
-        <Grid sx={{alignItems: 'center'}} container spacing={2}>
+        <Grid sx={{ alignItems: "center" }} container spacing={2}>
           <Grid item xs={12} md={6}>
-          <CardMedia
-          component="img"
-          sx={{borderRadius: "10px", py: 4}}
-          image={img}
-          alt="Live from space album cover"
-        />
+            <CardMedia
+              component="img"
+              sx={{ borderRadius: "10px", py: 4 }}
+              image={img}
+              alt="Live from space album cover"
+            />
           </Grid>
           <Grid item xs={12} md={6}>
-          <Box sx={{ display: "flex", flexDirection: "column", marginLeft: 3 }}>
-          <CardContent sx={{ flex: "1 0 auto" }}>
-            <Typography component="div" variant="h4">
-              {productName}
-            </Typography>
-            <Box>
-              <Typography sx={{ mt: 3, mb: 2 }} component="div" variant="h5">
-                Price: $ {price}
-              </Typography>
-              <Typography
-                variant="subtitle1"
-                color="text.secondary"
-                component="div"
-              >
-                {discription}
-              </Typography>
-              <Button
-                sx={{ mt: 2 }}
-                variant="contained"
-                onClick={handleOpenModal}
-              >
-                Place Order
-              </Button>
+            <Box
+              sx={{ display: "flex", flexDirection: "column", marginLeft: 3 }}
+            >
+              <CardContent sx={{ flex: "1 0 auto" }}>
+                <Typography component="div" variant="h4">
+                  {productName}
+                </Typography>
+                <Box>
+                  <Typography
+                    sx={{ mt: 3, mb: 2 }}
+                    component="div"
+                    variant="h5"
+                  >
+                    Price: $ {price}
+                  </Typography>
+                  <Typography
+                    variant="subtitle1"
+                    color="text.secondary"
+                    component="div"
+                  >
+                    {discription}
+                  </Typography>
+                  <Button
+                    sx={{ mt: 2 }}
+                    variant="contained"
+                    onClick={handleOpenModal}
+                  >
+                    Place Order
+                  </Button>
+                </Box>
+              </CardContent>
             </Box>
-          </CardContent>
-        </Box>
           </Grid>
         </Grid>
       </Card>

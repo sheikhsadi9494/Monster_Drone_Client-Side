@@ -8,7 +8,7 @@ const AllProducts = () => {
   const [products, setProducts] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:5000/products")
+    fetch("https://stormy-retreat-92575.herokuapp.com/products")
       .then((res) => res.json())
       .then((data) => setProducts(data));
   }, []);
@@ -19,8 +19,13 @@ const AllProducts = () => {
         <Navbar></Navbar>
         <ProductPageBanner></ProductPageBanner>
       </Box>
-      <Typography variant="h4" sx={{fontWeight: 'bold', textAlign: 'center', mt: 10, mb: 7}} gutterBottom component="div">
-           Our All Products 
+      <Typography
+        variant="h4"
+        sx={{ fontWeight: "bold", textAlign: "center", mt: 10, mb: 7 }}
+        gutterBottom
+        component="div"
+      >
+        Our All Products
       </Typography>
       <Container sx={{ mt: 5 }}>
         <Grid container spacing={3}>

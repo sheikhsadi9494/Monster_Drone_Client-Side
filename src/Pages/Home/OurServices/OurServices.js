@@ -7,13 +7,13 @@ const OurServices = () => {
   const [products, setProducts] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:5000/products")
+    fetch("https://stormy-retreat-92575.herokuapp.com/products")
       .then((res) => res.json())
       .then((data) => setProducts(data.slice(3)));
   }, []);
 
   return (
-    <Box sx={{mb: 10}}>
+    <Box sx={{ mb: 10 }}>
       <Typography
         sx={{ my: 5, fontWeight: "bold", textAlign: "center" }}
         variant="h4"
@@ -24,14 +24,9 @@ const OurServices = () => {
       </Typography>
       <Container>
         <Grid container spacing={3}>
-          {
-              products.map(product => 
-                <OurService
-                key={product._id}
-                product={product}
-                ></OurService>
-                )
-          }
+          {products.map((product) => (
+            <OurService key={product._id} product={product}></OurService>
+          ))}
         </Grid>
       </Container>
     </Box>

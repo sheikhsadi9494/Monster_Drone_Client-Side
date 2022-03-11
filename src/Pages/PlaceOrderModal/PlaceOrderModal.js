@@ -39,34 +39,33 @@ export default function PlaceOrderModal({
     setOrderDetails(newDetails);
   };
 
-  const handleSubmit = e => {
-      e.preventDefault();
-    //   collact data 
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    //   collact data
     const order = {
-        ...orderDetails,
-        img, 
-        productName,
-        discription,
-        price,
-        status: 'pending'
-    }
+      ...orderDetails,
+      img,
+      productName,
+      discription,
+      price,
+      status: "pending",
+    };
     // post data to the server
     console.log(order);
-    fetch('http://localhost:5000/orders', {
-        method: "POST",
-        headers: {
-            'content-type' : 'application/json'
-        },
-        body: JSON.stringify(order)
-
+    fetch("https://stormy-retreat-92575.herokuapp.com/orders", {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(order),
     })
-    .then(res => res.json())
-    .then(data => {
+      .then((res) => res.json())
+      .then((data) => {
         if (data.insertedId) {
-            handleCloseModal();
-          }
-    });
-  }
+          handleCloseModal();
+        }
+      });
+  };
 
   return (
     <div>

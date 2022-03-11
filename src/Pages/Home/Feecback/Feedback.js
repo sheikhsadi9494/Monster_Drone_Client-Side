@@ -3,13 +3,13 @@ import React, { useEffect, useState } from "react";
 import SingleFeedback from "../SingleFeedback/SingleFeedback";
 
 const Feedback = () => {
-    const [reviews, setReviews] = useState([]);
+  const [reviews, setReviews] = useState([]);
 
-    useEffect(() => {
-        fetch('http://localhost:5000/reviews')
-        .then(res => res.json())
-        .then(data => setReviews(data))
-    }, [])
+  useEffect(() => {
+    fetch("https://stormy-retreat-92575.herokuapp.com/reviews")
+      .then((res) => res.json())
+      .then((data) => setReviews(data));
+  }, []);
   return (
     <div>
       <Typography
@@ -21,13 +21,10 @@ const Feedback = () => {
         Our Client Says
       </Typography>
       <Container>
-        <Grid sx={{mt: 5, mb: 10}} container spacing={2}>
-          {
-              reviews.map(review => <SingleFeedback
-              key={review._id}
-              review={review}
-              ></SingleFeedback>)
-          }
+        <Grid sx={{ mt: 5, mb: 10 }} container spacing={2}>
+          {reviews.map((review) => (
+            <SingleFeedback key={review._id} review={review}></SingleFeedback>
+          ))}
         </Grid>
       </Container>
     </div>
