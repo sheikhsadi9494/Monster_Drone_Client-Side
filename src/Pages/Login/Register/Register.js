@@ -35,8 +35,8 @@ const Register = () => {
     return (
         <Container style={{textAlign: 'center'}}>
         <Box sx={{marginY: "50px" }}>
-         <Typography variant="h3" gutterBottom component="div">
-           TravelDay
+         <Typography sx={{fontWeight: 'bold'}} variant="h3" gutterBottom component="div">
+           MonsterDrone
          </Typography>
         </Box>
         <Box  
@@ -82,7 +82,7 @@ const Register = () => {
             variant="standard"
           />
           <Box>
-             <Button type="submit" sx={{width: '100%', marginY: '10px'}} variant="contained">Register</Button>
+             <Button type="submit" sx={{width: '100%', marginY: '10px', backgroundColor: 'black'}} variant="contained">Register</Button>
           </Box>
         </form>
          } 
@@ -92,7 +92,7 @@ const Register = () => {
         <p style={{textAlign: 'center'}}>already have an account ? please <Link to="/login">login</Link></p>
         <p style={{textAlign: 'center', marginTop: '30px', marginBottom: '15px'}}>-------- or --------</p>
           <Box style={{ marginY: '10px'}}>
-             <Button onClick={handleGoogleSignIn} color="warning" type="submit" sx={{width: '100%'}} variant="contained"><i class="fa-brands fa-google"></i>_Sign in With Google</Button>
+             <Button onClick={handleGoogleSignIn} color="warning" type="submit" sx={{width: '100%'}} variant="contained">Sign in With Google</Button>
           </Box>
 
         {

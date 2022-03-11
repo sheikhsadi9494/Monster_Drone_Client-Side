@@ -13,9 +13,7 @@ import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
 import { Link } from "react-router-dom";
 import useAuth from "../../../hooks/useAuth";
-
-const pages = ["Products", "Pricing", "Blog"];
-const settings = ["Profile", "Account", "Dashboard", "Logout"];
+import { ListItem, ListItemText } from "@mui/material";
 
 const Navbar = () => {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
@@ -45,7 +43,7 @@ const Navbar = () => {
     >
       <Container maxWidth="xl">
         <Toolbar disableGutters>
-          <Link to="/">
+          <Link style={{ textDecoration: "none" }} to="/">
             <Typography
               variant="h5"
               noWrap
@@ -57,6 +55,9 @@ const Navbar = () => {
                   md: "flex",
                   alignItems: "center",
                   fontWeight: "bold",
+                  color: "black",
+                  textDecoration: "none",
+                  marginLeft: "50px",
                 },
               }}
             >
@@ -92,51 +93,63 @@ const Navbar = () => {
                 display: { xs: "block", md: "none" },
               }}
             >
-              <MenuItem onClick={handleCloseNavMenu}>
-                {/* responsive manu */}
-              </MenuItem>
+              {/* <MenuItem onClick={handleCloseNavMenu}> */}
+              <Link style={{ textDecoration: "none" }} to="/expolre">
+                <ListItem sx={{color: "black"}} button>
+                  Expolre
+                  <ListItemText />
+                </ListItem>
+              </Link>
+
+              {user.email && (
+                <Link style={{ textDecoration: "none" }} to="/dashbord">
+                  <ListItem sx={{color: "black"}} button>
+                  Dashbord
+                  <ListItemText />
+                </ListItem>
+                </Link>
+              )}
+              {/* </MenuItem> */}
             </Menu>
           </Box>
-          <Typography
-            variant="h6"
-            noWrap
-            component="div"
-            sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}
-          >
-            LOGO
-          </Typography>
+
           <Box
             sx={{
               flexGrow: 1,
-              display: { xs: "none", md: "flex", alignItems: "center" },
+              display: { xs: "none", md: "flex", justifyContent: "flex-end" },
+              // border: '2px solid black',
             }}
           >
-            <Link to='/expolre'>
-            <Button
-              sx={{ my: 2, color: "black", display: "block" }}
-            >
-              Expolre
-            </Button>
+            <Link style={{ textDecoration: "none" }} to="/expolre">
+              <Button sx={{ my: 2, color: "black", display: "block" }}>
+                Expolre
+              </Button>
             </Link>
+            {user.email && (
+              <Link style={{ textDecoration: "none" }} to="/dashbord">
+                <Button sx={{ my: 2, color: "black", display: "block" }}>
+                  dashbord
+                </Button>
+              </Link>
+            )}
           </Box>
 
-          <Box sx={{ flexGrow: 0, display: 'flex', alignItems: 'center'}}>
-            <Box>
-              {user.email ? (
-                <Button onClick={logOut}>Logout</Button>
-              ) : (
-                <Link to="/login">
-                  <Button>Login</Button>
-                </Link>
-              )}
-            </Box>
-            <Box>
-              {user.email && (
-                <Typography variant="body1" gutterBottom component="div">
-                  {user.displayName}
-                </Typography>
-              )}
-            </Box>
+          <Box sx={{ mx: 1 }}>
+            {user.email ? (
+              <Button style={{ color: "black" }} onClick={logOut}>
+                logout
+              </Button>
+            ) : (
+              <Link style={{ textDecoration: "none" }} to="/login">
+                <Button style={{ color: "black" }}>Login</Button>
+              </Link>
+            )}
+          </Box>
+
+          <Box sx={{ flexGrow: 0 }}>
+            <Tooltip title="Open settings">
+              <Typography textAlign="center">{user.displayName}</Typography>
+            </Tooltip>
           </Box>
         </Toolbar>
       </Container>

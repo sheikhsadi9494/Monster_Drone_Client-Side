@@ -6,7 +6,7 @@ const Product = ({product}) => {
     const { productName, discription, img, price, _id} = product;
   return (
     <Grid item xs={12} lg={4}>
-      <Card>
+      <Card sx={{boxShadow: 2}}>
         <CardMedia
           component="img"
           height="250"
@@ -24,9 +24,9 @@ const Product = ({product}) => {
             {discription}
           </Typography>
         </CardContent>
-        <Link to={`/product/${_id}`}>
+        <Link to={`/product/${_id}`} style={{textDecoration: 'none'}}>
           <Button
-            sx={{ backgroundColor: "black", mx: 2, mb: 2 }}
+            sx={{ backgroundColor: "black", mx: 2, mb: 2}}
             variant="contained"
           >
             Buy Now

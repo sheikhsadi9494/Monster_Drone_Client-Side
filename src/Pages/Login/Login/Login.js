@@ -34,13 +34,13 @@ const Login = () => {
   return (
     <Container style={{textAlign: 'center'}}>
       <Box sx={{ marginY: "50px" }}>
-      <Typography variant="h3" gutterBottom component="div">
-        TravelDay
+      <Typography sx={{fontWeight: 'bold'}} variant="h3" gutterBottom component="div">
+        Monster Drone
       </Typography>
       </Box>
       <Box  
         style={{
-          border: "1px solid gray",
+          border: '1px solid black',
           width: "45%",
           margin: "auto",
           padding: "40px",
@@ -66,7 +66,7 @@ const Login = () => {
           variant="standard"
         />
         <Box>
-           <Button type="submit" sx={{width: '100%', marginY: '10px'}} variant="contained">Login</Button>
+           <Button type="submit" sx={{width: '100%', marginY: '10px', backgroundColor: 'black'}} variant="contained">Login</Button>
         </Box>
       </form>
       }
@@ -76,7 +76,7 @@ const Login = () => {
       <p style={{textAlign: 'center'}}>dont have an account ? <Link to="/register">register</Link></p>
       <p style={{textAlign: 'center', marginTop: '30px', marginBottom: '15px'}}>-------- or --------</p>
         <Box style={{marginY: '10px'}}>
-           <Button onClick={handleGoogleSignIn} color="warning" type="submit" sx={{width: '100%'}} variant="contained"><i class="fa-brands fa-google"></i>_Sign in With Google</Button>
+           <Button onClick={handleGoogleSignIn} color="warning" type="submit" sx={{width: '100%'}} variant="contained">Signin With Google</Button>
         </Box>
         {
           user.email &&

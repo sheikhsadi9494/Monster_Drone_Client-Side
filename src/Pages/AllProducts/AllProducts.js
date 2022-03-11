@@ -1,34 +1,36 @@
-import { Container, Grid } from '@mui/material';
-import React, { useEffect, useState } from 'react';
-import Product from '../Product/Product';
-import Navbar from '../Shered/Navbar/Navbar';
+import { Box, Container, Grid, Typography } from "@mui/material";
+import React, { useEffect, useState } from "react";
+import Product from "../Product/Product";
+import ProductPageBanner from "../ProductPageBanner/ProductPageBanner";
+import Navbar from "../Shered/Navbar/Navbar";
 
 const AllProducts = () => {
-    const [products, setProducts] = useState([]);
+  const [products, setProducts] = useState([]);
 
-    useEffect(() => {
-        fetch('http://localhost:5000/products')
-        .then(res => res.json())
-        .then(data => setProducts(data))
-    }, [])
+  useEffect(() => {
+    fetch("http://localhost:5000/products")
+      .then((res) => res.json())
+      .then((data) => setProducts(data));
+  }, []);
 
-    return (
-        <div>
-            <Navbar></Navbar>
-            <Container sx={{mt: 5}}>
-            <Grid container spacing={2}>
-          {
-              products.map(product => 
-                <Product
-                key={product._id}
-                product={product}
-                ></Product>
-                )
-          }
+  return (
+    <div>
+      <Box>
+        <Navbar></Navbar>
+        <ProductPageBanner></ProductPageBanner>
+      </Box>
+      <Typography variant="h4" sx={{fontWeight: 'bold', textAlign: 'center', mt: 10, mb: 7}} gutterBottom component="div">
+           Our All Products 
+      </Typography>
+      <Container sx={{ mt: 5 }}>
+        <Grid container spacing={3}>
+          {products.map((product) => (
+            <Product key={product._id} product={product}></Product>
+          ))}
         </Grid>
-            </Container>
-        </div>
-    );
+      </Container>
+    </div>
+  );
 };
 
 export default AllProducts;

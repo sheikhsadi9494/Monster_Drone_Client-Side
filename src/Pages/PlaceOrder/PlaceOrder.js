@@ -1,4 +1,12 @@
-import { Button, Card, CardContent, CardMedia, Typography } from "@mui/material";
+import {
+  Box,
+  Button,
+  Card,
+  CardContent,
+  CardMedia,
+  Grid,
+  Typography,
+} from "@mui/material";
 import React, { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import PlaceOrderModal from "../PlaceOrderModal/PlaceOrderModal";
@@ -18,46 +26,56 @@ const PlaceOrder = () => {
   const [openModal, setOpenModal] = React.useState(false);
   const handleOpenModal = () => setOpenModal(true);
   const handleCloseModal = () => setOpenModal(false);
-  
+
   return (
     <div>
-        <Navbar></Navbar>
-      <Card sx={{ maxWidth: 545, mx: 'auto', mt: 5}}>
-        <CardMedia
+      <Navbar></Navbar>
+      <Card sx={{ width: "70%", mx: "auto", mt: 10, boxShadow: 0 }}>
+        <Grid sx={{alignItems: 'center'}} container spacing={2}>
+          <Grid item xs={12} md={6}>
+          <CardMedia
           component="img"
-          height="250"
+          sx={{borderRadius: "10px", py: 4}}
           image={img}
-          alt="green iguana"
+          alt="Live from space album cover"
         />
-        <CardContent>
-          <Typography gutterBottom variant="h5" component="div">
-            {productName}
-          </Typography>
-          <Typography sx={{ fontWeight: "bold" }} variant="h6" color="text">
-            Price: {price}
-          </Typography>
-          <Typography variant="body2" color="text.secondary">
-            {discription}
-          </Typography>
-        </CardContent>
-
-          <Button
-            sx={{ backgroundColor: "black", mx: 2, mb: 2 }}
-            variant="contained"
-            onClick={handleOpenModal}
-          >
-            Place Order
-          </Button>
+          </Grid>
+          <Grid item xs={12} md={6}>
+          <Box sx={{ display: "flex", flexDirection: "column", marginLeft: 3 }}>
+          <CardContent sx={{ flex: "1 0 auto" }}>
+            <Typography component="div" variant="h4">
+              {productName}
+            </Typography>
+            <Box>
+              <Typography sx={{ mt: 3, mb: 2 }} component="div" variant="h5">
+                Price: $ {price}
+              </Typography>
+              <Typography
+                variant="subtitle1"
+                color="text.secondary"
+                component="div"
+              >
+                {discription}
+              </Typography>
+              <Button
+                sx={{ mt: 2 }}
+                variant="contained"
+                onClick={handleOpenModal}
+              >
+                Place Order
+              </Button>
+            </Box>
+          </CardContent>
+        </Box>
+          </Grid>
+        </Grid>
       </Card>
-
       <PlaceOrderModal
-      handleOpenModal={handleOpenModal}
-      handleCloseModal={handleCloseModal}
-      openModal={openModal}
-      product={product}
-      >
-
-      </PlaceOrderModal>
+        handleOpenModal={handleOpenModal}
+        handleCloseModal={handleCloseModal}
+        openModal={openModal}
+        product={product}
+      ></PlaceOrderModal>
     </div>
   );
 };

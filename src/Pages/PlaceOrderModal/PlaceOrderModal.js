@@ -47,7 +47,8 @@ export default function PlaceOrderModal({
         img, 
         productName,
         discription,
-        price
+        price,
+        status: 'pending'
     }
     // post data to the server
     console.log(order);
@@ -88,6 +89,7 @@ export default function PlaceOrderModal({
             <TextField
               label="Your Email"
               defaultValue={user.email}
+              typ="email"
               size="small"
               sx={{ my: 2, width: "100%" }}
               name="email"
@@ -99,6 +101,22 @@ export default function PlaceOrderModal({
               size="small"
               sx={{ mb: 2, width: "100%" }}
               name="name"
+              onBlur={handleBlur}
+            />
+            <TextField
+              label="Your PhoneNumber"
+              defaultValue=""
+              size="small"
+              sx={{ mb: 2, width: "100%" }}
+              name="phoneNumber"
+              onBlur={handleBlur}
+            />
+            <TextField
+              label="Your Address"
+              defaultValue=""
+              size="small"
+              sx={{ mb: 2, width: "100%" }}
+              name="address"
               onBlur={handleBlur}
             />
             <TextField
@@ -126,7 +144,7 @@ export default function PlaceOrderModal({
               }}
             />
             <Button type="submit" sx={{ mt: 2 }} variant="contained">
-              Place Order
+              Order Confrom
             </Button>
           </form>
         </Box>

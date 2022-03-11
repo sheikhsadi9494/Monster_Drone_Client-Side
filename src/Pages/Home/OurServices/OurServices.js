@@ -23,7 +23,7 @@ const OurServices = () => {
         Our Best Products
       </Typography>
       <Container>
-        <Grid container spacing={2}>
+        <Grid container spacing={3}>
           {
               products.map(product => 
                 <OurService

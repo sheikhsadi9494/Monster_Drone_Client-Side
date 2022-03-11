@@ -6,7 +6,7 @@ const OurService = ({ product }) => {
     const { productName, discription, img, price, _id} = product;
   return (
     <Grid item xs={12} lg={4}>
-      <Card>
+      <Card sx={{boxShadow: 2}}>
         <CardMedia
           component="img"
           height="250"
@@ -24,7 +24,7 @@ const OurService = ({ product }) => {
             {discription}
           </Typography>
         </CardContent>
-        <Link to={`/product/${_id}`}>
+        <Link style={{textDecoration: 'none'}} to={`/product/${_id}`}>
          <Button sx={{backgroundColor: 'black', mx: 2, mb: 2}} variant="contained">Buy Now</Button>
         </Link>
       </Card>
