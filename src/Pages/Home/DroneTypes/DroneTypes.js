@@ -6,7 +6,7 @@ const DroneTypes = () => {
   return (
     <Container>
       <Box sx={{ textAlign: "center", mt: 10 }}>
-        <Typography variant="h4" gutterBottom component="div">
+        <Typography sx={{fontWeight: 'bold'}} variant="h4" gutterBottom component="div">
           We Sell The Best Drones
         </Typography>
         <Typography variant="body2" gutterBottom component="div">

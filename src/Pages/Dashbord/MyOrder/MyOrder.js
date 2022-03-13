@@ -60,6 +60,7 @@ const MyOrder = ({ order, orders, setOrders }) => {
         <Button
           onClick={() => handleDeleteBooking(_id)}
           sx={{ mx: 2, mb: 2 }}
+          color="error"
           variant="contained"
         >
           Cancle Order

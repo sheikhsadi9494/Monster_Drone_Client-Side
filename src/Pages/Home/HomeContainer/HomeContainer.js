@@ -1,9 +1,11 @@
 import React from 'react';
 import Navbar from '../../Shered/Navbar/Navbar';
 import Banner from '../Banner/Banner';
+import DroneDetails from '../DroneDetails/DroneDetails';
 import DroneTypes from '../DroneTypes/DroneTypes';
 import Feedback from '../Feecback/Feedback';
 import Fetures from '../Fetures/Fetures';
+import Futured from '../Futured/Futured';
 import OurServices from '../OurServices/OurServices';
 
 const HomeContainer = () => {
@@ -14,7 +16,9 @@ const HomeContainer = () => {
             <DroneTypes></DroneTypes>
             <Fetures></Fetures>
             <OurServices></OurServices>
+            <Futured></Futured>
             <Feedback></Feedback>
+            <DroneDetails></DroneDetails>
         </div>
     );
 };

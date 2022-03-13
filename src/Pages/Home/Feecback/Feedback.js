@@ -11,14 +11,14 @@ const Feedback = () => {
       .then((data) => setReviews(data));
   }, []);
   return (
-    <div>
+    <div style={{marginTop: '100px'}}>
       <Typography
-        sx={{ textAlign: "center", fontWeight: "bold" }}
+        sx={{ textAlign: "center", fontWeight: "bold", mb: 5}}
         variant="h4"
         gutterBottom
         component="div"
       >
-        Our Client Says
+        Our Customer's Says
       </Typography>
       <Container>
         <Grid sx={{ mt: 5, mb: 10 }} container spacing={2}>

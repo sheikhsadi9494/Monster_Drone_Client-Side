@@ -1,6 +1,7 @@
 import { Button, Container, Grid, Typography } from "@mui/material";
 import { Box } from "@mui/system";
 import React from "react";
+import { Link } from "react-router-dom";
 
 const Banner = () => {
   return (
@@ -18,9 +19,11 @@ const Banner = () => {
          Many Great <br /> Ways To Use <br />  Drons
         </Typography>
         <Typography variant="body1" gutterBottom component="div">
-          Our every drone is costom modified and we have the <br /> best drons in the world. Our every costomer <br /> is happy costomer
+          Our every drone is costom modified and we have <br /> worlds best drons. Our each and every costomer <br /> is happy costomer
         </Typography>
+        <Link style={{textDecoration: 'none'}} to="/expolre">
         <Button sx={{backgroundColor: 'black', mt: 1}} variant="contained">Buy Now</Button>
+        </Link>
         </Box>
       </Grid>
     </Grid>

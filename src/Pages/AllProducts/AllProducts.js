@@ -21,13 +21,13 @@ const AllProducts = () => {
       </Box>
       <Typography
         variant="h4"
-        sx={{ fontWeight: "bold", textAlign: "center", mt: 10, mb: 7 }}
+        sx={{ fontWeight: "bold", textAlign: "center", mt: 10, mb: 10}}
         gutterBottom
         component="div"
       >
         Our All Products
       </Typography>
-      <Container sx={{ mt: 5 }}>
+      <Container sx={{ mt: 5 , mb: 10}}>
         <Grid container spacing={3}>
           {products.map((product) => (
             <Product key={product._id} product={product}></Product>

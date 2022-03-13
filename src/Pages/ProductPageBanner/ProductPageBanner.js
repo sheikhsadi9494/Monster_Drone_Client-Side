@@ -6,16 +6,16 @@ import { Grid } from "@mui/material";
 
 const ProductPageBanner = () => {
   return (
-    <Box>
+    <Box sx={{mt: 4}}>
         <Box>
         <Grid container spacing={2} sx={{alignItems: 'center', justifyContent: 'space-evenly'}}>
         <Grid item xs={12} md={4}>
-         <Box sx={{mx: 2, mt: 2}}>
+         <Box sx={{mx: 4, mt: 4}}>
          <Typography variant="h3" sx={{fontWeight: 'bold'}} gutterBottom component="div">
-            Get Your Dream Drone with DroneMonster
+            Get Your <span style={{color: 'orangeRed'}}>Dream</span> Drone with DroneMonster
           </Typography>
           <Typography variant="body1" gutterBottom component="div">
-            Our drons can do extream photography and video recoading in extream session and many more tings can do 
+            Our drons can do extream photography and video recoading in extream session and many things can do.
           </Typography>
          </Box>
         </Grid>
