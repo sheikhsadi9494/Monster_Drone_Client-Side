@@ -9,7 +9,7 @@ const DroneDetails = () => {
   return (
     <Box sx={{mb: 10, mt: 15}}>
         <Typography sx={{mb: 3, textAlign: 'center', fontWeight: 'bold'}} variant="h4">Drones and Octocopters Are Perfectly Suited For <br /> The Purposes Of Aerial Inspections</Typography>
-        <Typography sx={{mb: 3, textAlign: 'center', color: 'gray'}} variant="body1">Information highway will close the loop on focusing <br />
+        <Typography sx={{mb: 6, textAlign: 'center', color: 'gray'}} variant="body1">Information highway will close the loop on focusing <br />
         solely on the bottom line.</Typography>
       <Grid sx={{justifyContent: 'space-evenly', alignItems: 'center', px: 10}} container spacing={2}>
         <Grid item xs={12} lg={3}>

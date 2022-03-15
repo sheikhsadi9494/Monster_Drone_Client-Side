@@ -1,4 +1,4 @@
-import { Container, Grid, Typography } from "@mui/material";
+import { Box, CircularProgress, Container, Grid, Typography } from "@mui/material";
 import React, { useEffect, useState } from "react";
 import { Outlet } from "react-router-dom";
 import MyOrder from "../MyOrder/MyOrder";
@@ -25,18 +25,25 @@ const MyOrders = () => {
       >
         My Orders
       </Typography>
+      {
+        orders.length <= 0 ?
+        <Box sx={{ width: "3.5%", mx: "auto", mt: 10 }}>
+        <CircularProgress color="inherit" />
+      </Box>
+      :
       <Container sx={{ mt: 5 }}>
-        <Grid container spacing={2}>
-          {orders.map((order) => (
-            <MyOrder
-              key={order._id}
-              order={order}
-              orders={orders}
-              setOrders={setOrders}
-            ></MyOrder>
-          ))}
-        </Grid>
-      </Container>
+      <Grid container spacing={2}>
+        {orders.map((order) => (
+          <MyOrder
+            key={order._id}
+            order={order}
+            orders={orders}
+            setOrders={setOrders}
+          ></MyOrder>
+        ))}
+      </Grid>
+    </Container>
+      }
       <Outlet />
     </div>
   );

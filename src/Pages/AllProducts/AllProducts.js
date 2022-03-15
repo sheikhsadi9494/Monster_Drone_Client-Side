@@ -1,4 +1,4 @@
-import { Box, Container, Grid, Typography } from "@mui/material";
+import { Box, CircularProgress, Container, Grid, Typography } from "@mui/material";
 import React, { useEffect, useState } from "react";
 import Product from "../Product/Product";
 import ProductPageBanner from "../ProductPageBanner/ProductPageBanner";
@@ -21,19 +21,25 @@ const AllProducts = () => {
       </Box>
       <Typography
         variant="h4"
-        sx={{ fontWeight: "bold", textAlign: "center", mt: 10, mb: 10}}
+        sx={{ fontWeight: "bold", textAlign: "center", mt: 10, mb: 10 }}
         gutterBottom
         component="div"
       >
         Our All Products
       </Typography>
-      <Container sx={{ mt: 5 , mb: 10}}>
-        <Grid container spacing={3}>
-          {products.map((product) => (
-            <Product key={product._id} product={product}></Product>
-          ))}
-        </Grid>
-      </Container>
+      {products.length <= 0 ? (
+        <Box sx={{ width: "3.5%", mx: "auto", my: 20}}>
+          <CircularProgress color="inherit" />
+        </Box>
+      ) : (
+        <Container sx={{ mt: 5, mb: 10 }}>
+          <Grid container spacing={3}>
+            {products.map((product) => (
+              <Product key={product._id} product={product}></Product>
+            ))}
+          </Grid>
+        </Container>
+      )}
     </div>
   );
 };

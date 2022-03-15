@@ -67,6 +67,9 @@ const ManageAllOrders = () => {
             <TableRow>
               <TableCell sx={{ fontWeight: "bold" }}>Product</TableCell>
               <TableCell sx={{ fontWeight: "bold" }} align="center">
+                Email
+              </TableCell>
+              <TableCell sx={{ fontWeight: "bold" }} align="center">
                 Price
               </TableCell>
               <TableCell sx={{ fontWeight: "bold" }} align="center">
@@ -90,6 +93,7 @@ const ManageAllOrders = () => {
                 <TableCell component="th" scope="row">
                   {row.productName}
                 </TableCell>
+                <TableCell align="center"> {row.email}</TableCell>
                 <TableCell align="center"> ${row.price}</TableCell>
                 <TableCell align="center">{row.status}</TableCell>
                 <TableCell align="center">

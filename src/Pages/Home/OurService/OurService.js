@@ -25,7 +25,7 @@ const OurService = ({ product }) => {
           </Typography>
         </CardContent>
         <Link style={{textDecoration: 'none'}} to={`/product/${_id}`}>
-         <Button sx={{backgroundColor: 'black', mx: 2, mb: 2}} variant="contained">Buy Now</Button>
+         <Button sx={{backgroundColor: 'black', mx: 2, mb: 2, ":hover": {backgroundColor: "black"} }} variant="contained">Buy Now</Button>
         </Link>
       </Card>
     </Grid>

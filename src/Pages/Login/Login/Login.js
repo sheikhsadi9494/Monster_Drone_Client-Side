@@ -66,7 +66,7 @@ const Login = () => {
           variant="standard"
         />
         <Box>
-           <Button type="submit" sx={{width: '100%', marginY: '10px', backgroundColor: 'black'}} variant="contained">Login</Button>
+           <Button type="submit" sx={{width: '100%', marginY: '10px', backgroundColor: 'black', ":hover": {backgroundColor: "black"} }} variant="contained">Login</Button>
         </Box>
       </form>
       }

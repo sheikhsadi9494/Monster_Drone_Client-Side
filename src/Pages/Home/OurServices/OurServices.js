@@ -1,4 +1,4 @@
-import { Container, Grid, Typography } from "@mui/material";
+import { CircularProgress, Container, Grid, Typography } from "@mui/material";
 import { Box } from "@mui/system";
 import React, { useEffect, useState } from "react";
 import OurService from "../OurService/OurService";
@@ -22,13 +22,19 @@ const OurServices = () => {
       >
         Our Best Products
       </Typography>
-      <Container>
-        <Grid container spacing={3}>
-          {products.map((product) => (
-            <OurService key={product._id} product={product}></OurService>
-          ))}
-        </Grid>
-      </Container>
+      {products.length <= 0 ? (
+        <Box sx={{ width: "3.5%", mx: "auto", mt: 10 }}>
+          <CircularProgress color="inherit" />
+        </Box>
+      ) : (
+        <Container>
+          <Grid container spacing={3}>
+            {products.map((product) => (
+              <OurService key={product._id} product={product}></OurService>
+            ))}
+          </Grid>
+        </Container>
+      )}
     </Box>
   );
 };

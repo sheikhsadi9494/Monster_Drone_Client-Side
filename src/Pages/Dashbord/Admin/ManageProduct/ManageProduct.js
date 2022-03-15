@@ -59,8 +59,9 @@ const ManageProduct = ({ product, products, setProducts }) => {
             onClick={() => handleDeleteProduct(_id)}
             sx={{ mt: 2 }}
             variant="contained"
+            color="error"
           >
-            Delete Product
+            Remove Product
           </Button>
         </CardContent>
       </Card>

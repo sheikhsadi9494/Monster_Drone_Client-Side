@@ -95,7 +95,8 @@ const AddProducts = () => {
             variant="standard"
           />
           <Button
-            sx={{ mt: 2, backgroundColor: "black" }}
+            sx={{ mt: 2}}
+            color="warning"
             type="submit"
             variant="contained"
           >

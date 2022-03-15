@@ -23,7 +23,7 @@ const drawerWidth = 240;
 function DashbordHome(props) {
   const { window } = props;
   const [mobileOpen, setMobileOpen] = React.useState(false);
-  const { admin, user} = useAuth();
+  const { admin, user, logOut} = useAuth();
 
   const handleDrawerToggle = () => {
     setMobileOpen(!mobileOpen);
@@ -46,13 +46,6 @@ function DashbordHome(props) {
                 My Orders
               <ListItemText />
               </ListItem>
-              </Link>
-
-              <Link style={{textDecoration: 'none', color: 'black'}} to="pay">
-              <ListItem button>
-               Make Payment
-              <ListItemText />
-              </ListItem>  
               </Link>
 
               <Link style={{textDecoration: 'none', color: 'black'}} to="review">
@@ -96,14 +89,27 @@ function DashbordHome(props) {
               </Link>
 
             </>}
+
+              <Link style={{textDecoration: 'none', color: 'black'}} to="pay">
+              <ListItem button>
+               Make Payment
+              <ListItemText />
+              </ListItem>  
+              </Link>
      
         </Box>
-        <Link style={{textDecoration: 'none', color: 'black'}} to="/">
-        <ListItem button>
+             <Link style={{textDecoration: 'none', color: 'black'}} to="/">
+             <ListItem button>
                Back To Home
               <ListItemText />
               </ListItem>  
-        </Link>
+              </Link>
+             {/* <Link style={{textDecoration: 'none', color: 'black'}} to="/"> */}
+             <ListItem onClick={logOut} button>
+               Logout
+              <ListItemText />
+              </ListItem>  
+              {/* </Link> */}
       </List>
     </div>
   );

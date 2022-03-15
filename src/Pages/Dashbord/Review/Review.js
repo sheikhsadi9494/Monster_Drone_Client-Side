@@ -45,8 +45,8 @@ const Review = () => {
     <div>
       <Box>
         <Typography
-          sx={{ textAlign: "center" }}
-          variant="h3"
+          sx={{ textAlign: "center", fontWeight: 'bold', mb: 5}}
+          variant="h4"
           gutterBottom
           component="div"
         >
@@ -74,7 +74,7 @@ const Review = () => {
             onBlur={handleBlur}
           />
           <Rating sx={{ mb: 2 }} name="star" onBlur={handleBlur} /> <br />
-          <Button variant="contained" type="submit">
+          <Button color="warning" variant="contained" type="submit">
             Submit
           </Button>
         </form>

@@ -29,7 +29,7 @@ function App() {
         <Route path="login" element={<Login/>}/>
         <Route path="register" element={<Register/>}/>
         <Route path="expolre" element={<AllProducts/>}/>
-        <Route path="dashbord" element={<DashbordHome/>}>
+        <Route path="dashbord" element={<PrivateRoute><DashbordHome/></PrivateRoute>}>
           <Route index element={<MyOrders/>}/>  
           <Route path="review" element={<Review/>}/>  
           <Route path="pay" element={<Pay/>}/>  

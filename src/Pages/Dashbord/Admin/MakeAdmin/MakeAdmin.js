@@ -53,6 +53,7 @@ const MakeAdmin = () => {
               type="submit"
               style={{ margin: "auto" }}
               variant="contained"
+              color="warning"
             >
               Make Admin
             </Button>

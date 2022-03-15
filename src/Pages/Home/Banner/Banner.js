@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 
 const Banner = () => {
   return (
-    <Grid sx={{justifyContent: 'space-evenly', alignItems: 'center', border: '1px solid gray', mt: 0.1}} container spacing={2}>
+    <Grid sx={{justifyContent: 'space-evenly', alignItems: 'center', mt: 0.1}} container spacing={2}>
       <Grid item xs={12} lg={7}>
         <img
           style={{ width: "100%" }}
@@ -22,7 +22,7 @@ const Banner = () => {
           Our every drone is costom modified and we have <br /> worlds best drons. Our each and every costomer <br /> is happy costomer
         </Typography>
         <Link style={{textDecoration: 'none'}} to="/expolre">
-        <Button sx={{backgroundColor: 'black', mt: 1}} variant="contained">Buy Now</Button>
+        <Button sx={{ backgroundColor: 'black', mt: 1, ":hover": {backgroundColor: "black"}}} variant="contained">Buy Now</Button>
         </Link>
         </Box>
       </Grid>

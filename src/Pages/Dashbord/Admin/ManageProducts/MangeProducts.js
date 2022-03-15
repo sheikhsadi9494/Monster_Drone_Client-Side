@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Typography from "@mui/material/Typography";
-import { Container, Grid } from "@mui/material";
+import { Box, CircularProgress, Container, Grid } from "@mui/material";
 import ManageProduct from "../ManageProduct/ManageProduct";
 
 const MangeProducts = () => {
@@ -22,18 +22,25 @@ const MangeProducts = () => {
       >
         Manage Products
       </Typography>
+      {
+        products.length <= 0 ?
+        <Box sx={{ width: "3.5%", mx: "auto", mt: 10 }}>
+        <CircularProgress color="inherit" />
+      </Box>
+      :
       <Container>
-        <Grid container spacing={2}>
-          {products.map((product) => (
-            <ManageProduct
-              key={product._id}
-              product={product}
-              setProducts={setProducts}
-              products={products}
-            ></ManageProduct>
-          ))}
-        </Grid>
-      </Container>
+      <Grid container spacing={2}>
+        {products.map((product) => (
+          <ManageProduct
+            key={product._id}
+            product={product}
+            setProducts={setProducts}
+            products={products}
+          ></ManageProduct>
+        ))}
+      </Grid>
+    </Container>
+      }
     </div>
   );
 };
