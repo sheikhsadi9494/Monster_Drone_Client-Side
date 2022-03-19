@@ -19,7 +19,7 @@ const Banner = () => {
          Many Great <br /> Ways To Use <br />  Drons
         </Typography>
         <Typography variant="body1" gutterBottom component="div">
-          Our every drone is costom modified and we have <br /> worlds best drons. Our each and every costomer <br /> is happy costomer
+         We sell the worlds' monst versatile commercial drone. Up to 60 minutes of flight time. High-level redundancy.
         </Typography>
         <Link style={{textDecoration: 'none'}} to="/expolre">
         <Button sx={{ backgroundColor: 'black', mt: 1, ":hover": {backgroundColor: "black"}}} variant="contained">Buy Now</Button>
