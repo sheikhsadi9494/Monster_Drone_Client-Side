@@ -1,4 +1,5 @@
 import React from 'react';
+import Footer from '../../Shered/Footer/Footer';
 import Navbar from '../../Shered/Navbar/Navbar';
 import Banner from '../Banner/Banner';
 import DroneDetails from '../DroneDetails/DroneDetails';
@@ -19,6 +20,7 @@ const HomeContainer = () => {
             <Futured></Futured>
             <Feedback></Feedback>
             <DroneDetails></DroneDetails>
+            <Footer></Footer>
         </div>
     );
 };
